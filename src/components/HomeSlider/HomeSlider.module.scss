@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap');
+.py14 {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+}
+.px8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.py9 {
+    padding-bottom: 2.5rem;
+    padding-top: 2.5rem;
+}
+@media (min-width: 992px) {
+    .psLg12 {
+        padding-left: 4rem;
+    }
+    .pyLg16 {
+        padding-bottom: 8rem;
+        padding-top: 6rem;
+    }
+}
+.display5 {
+        font-size: calc(1.325rem + 2.1vw);
+        font-weight: 600;
+        line-height: 1.2;
+}
+
+@media (min-width: 1200px) {
+    .display5 {
+        font-size: 2.8rem;
+    }
+}
+
+.fs5 {
+    font-size: 1.09375rem;
+}
+
+.fs4 {
+    font-size:calc(1.25625rem + .075vw);
+}
+
+.fs3 {
+    font-size:calc(1.27813rem + .3375vw);
+    letter-spacing: -.03rem;
+}
+
+.fs5 {
+    font-size: 1.09375rem !important;
+}
+
+.mb5 {
+    margin-bottom: 1.25rem !important;
+}
+
+.mt4 {
+    margin-top: 1rem !important;
+}
+
+.mb6 {
+    margin-bottom: 1.5rem !important
+}
+
+.response {
+    object-fit: cover;
+    object-position: 25% 25%;
+}
+
+.homeSlider {
+    margin-bottom: 30px;
+}
+
+.mb8 {
+    margin-bottom: 3.5rem !important
+}

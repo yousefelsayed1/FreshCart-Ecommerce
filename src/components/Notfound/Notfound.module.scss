@@ -1,0 +1,21 @@
+.my10 {
+    margin-block: 6rem;
+}
+
+@media (max-width: 567px) {
+    .fsp7 {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .fsp7 {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .fsbtn {
+        font-size: 12px;
+    }
+}

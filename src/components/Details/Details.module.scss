@@ -1,0 +1,19 @@
+.btnAction {
+    align-items: center;
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: 0 2px 4px -1px rgba(145,158,171,.2),0 4px 5px 0 rgba(145,158,171,.14),0 1px 10px 0 rgba(145,158,171,.12);
+    display: inline-flex;
+    font-size: 14px;
+    height: 34px;
+    justify-content: center;
+    line-height: 34px;
+    text-align: center;
+    transition: all .3s ease 0s;
+    vertical-align: middle;
+    width: 34px;
+}
+.btnAction:hover {
+    background-color: #0aad0a;
+    color: white;
+}
