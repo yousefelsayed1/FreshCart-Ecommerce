@@ -1,0 +1,16 @@
+.maxHeight {
+    height: 500px;
+}
+
+@media (max-width: 991px) {
+    .maxHeight {
+        height: 380px;
+    }
+}
+@media (max-width: 767px) {
+    .maxHeight {
+        height: 420px;
+        padding: 0.5rem;
+    }
+}
+

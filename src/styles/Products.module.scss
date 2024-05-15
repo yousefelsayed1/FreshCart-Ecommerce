@@ -1,0 +1,25 @@
+@media (min-width: 1200px) {
+    .pad {
+        padding: 2rem !important;
+    }
+}
+@media (max-width: 1199px) {
+    .pad {
+        padding: 0.4rem !important;
+    }
+}
+@media (max-width: 767px) {
+    .pad {
+        padding: 2.5rem !important;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .spac {
+        letter-spacing: -0.03rem;
+    }
+}
+
+.fs9 {
+    font-size: 11px;
+}

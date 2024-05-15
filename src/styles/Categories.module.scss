@@ -1,0 +1,25 @@
+.fs6 {
+    font-size: 0.9rem;
+}
+.py8 {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.textTruncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #404040;
+}
+
+.cardProduct {
+    transition: .2s;
+    -moz-transition: .2s;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+}
+.cardProduct:hover {
+    border: 1px solid #0aad0a;
+    box-shadow: 0 5px 12px rgba(0,0,0,.12);
+}

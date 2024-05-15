@@ -1,0 +1,28 @@
+.category {
+    padding: 0;
+}
+.category:hover
+{
+    box-shadow: rgba(145,158,171,.2) 0px 2px 4px -1px,rgba(145,158,171,.14) 0px 4px 5px 0px,rgba(145,158,171,.12) 0px 1px 10px 0px;
+    border: solid 1px #0aad0a;
+}
+
+.mt6 {
+    margin-top: 4.5rem;
+}
+
+.maxHeight {
+    height: 350px;
+}
+
+@media (max-width: 991px) {
+    .maxHeight {
+        height: 300px;
+    }
+}
+@media (max-width: 767px) {
+    .maxHeight {
+        height: 450px;
+        padding: 0.5rem;
+    }
+}

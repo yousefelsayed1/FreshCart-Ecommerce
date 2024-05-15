@@ -1,0 +1,16 @@
+.mb5 {
+    margin-bottom: 9rem;
+}
+
+.textHover:hover {
+    color: #0aad0a;
+}
+
+@media (max-width: 767px) {
+    .fs9 {
+        font-size: 0.77rem;
+    }
+    .fs8 {
+        font-size: 0.87rem !important;
+    }
+}
