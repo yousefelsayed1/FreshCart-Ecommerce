@@ -11,18 +11,11 @@ export default function CartContextProvider(props) {
   const [dataWishList, setDataWishList] = useState([]);
   const [cartId, setCartId] = useState(null);
 
-  // const [data, setData] = useState([JSON.parse(localStorage.getItem("data") || "[]")]);
-
   let Baseurl = "https://ecommerce.routemisr.com";
 
   let header = {
     token: localStorage.getItem("userToken"),
   };
-
-  /*   const hostname = window.location.host;
-  let param = {
-    url: "https://" + hostname,
-  }; */
 
   function addToCart(id) {
     return axios
@@ -38,20 +31,11 @@ export default function CartContextProvider(props) {
         }
       )
       .then((res) => {
-        // console.log(res);
         toast.success(res.data.message);
         setCartNumber(res.data.numOfCartItems);
-        // console.log(cartNumber);
-        // localStorage.setItem('data',JSON.stringify(res.data.data));
       })
       .catch((err) => err);
   }
-  /* 
-    function getCart() {
-    return axios.get(`${Baseurl}/api/v1/cart`, {
-        headers: header,
-    })
-  } */
 
   function getCart() {
     return axios
@@ -67,7 +51,6 @@ export default function CartContextProvider(props) {
             cartNum = "";
           }
           setCartNumber(cartNum);
-          // console.log(res.data.data.products);
           setCartId(res.data.data._id);
           localStorage.setItem("userId", res.data.data.cartOwner);
         }
@@ -135,13 +118,6 @@ export default function CartContextProvider(props) {
     );
   }
 
-  /*   function getWishList() {
-    return axios
-      .get(`${Baseurl}/api/v1/wishlist`, {
-        headers: header,
-      })
-  } */
-
   async function getWishList() {
     return axios
       .get(`${Baseurl}/api/v1/wishlist`, {
@@ -161,20 +137,6 @@ export default function CartContextProvider(props) {
       })
       .catch((err) => err);
   }
-
-  // async function getWishList() {
-  //   try {
-  //     const res = await axios.get(`${Baseurl}/api/v1/wishlist`, {
-  //       headers: header,
-  //     });
-  //     if (res.data.data.length) {
-  //       setWishListNumber(res.data.data.length);
-  //     }
-  //     return res;
-  //   } catch (err) {
-  //     return err;
-  //   }
-  // }
 
   function deleteWishList(id) {
     return axios.delete(`${Baseurl}/api/v1/wishlist/${id}`, {

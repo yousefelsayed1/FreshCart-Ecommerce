@@ -25,51 +25,36 @@ export default function Products() {
   } = useContext(cartContext);
   const [matchingProductIds, setMatchingProductIds] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  // const[productList, setProduct] = useState([]);
   async function getProducts(page = currentPage) {
     const productsPerPage = 12;
     return await axios.get(
       `https://ecommerce.routemisr.com/api/v1/products?page=${page}&limit=${productsPerPage}`
     );
-    // console.log(data.data);
-    // setProduct(data.data);
   }
 
-  /*   useEffect(()=> {
-getProducts();
-
-  }, [])
- */
   let { data, isLoading } = useQuery(
     ["products", currentPage],
     () => getProducts(currentPage),
     {
       cacheTime: 3000,
       refetchInterval: 3000,
-      // // refetchOnMount: false,
-      // staleTime: 3000
     }
   );
   let products = data?.data.data;
-  // console.log(currentPage)
-  // console.log(products);
 
   useEffect(() => {
     (async () => {
       await getCart();
       let dataa = await getWishList();
       let wish = dataa.data?.data;
-      // Check if products and wish are defined
       if (products && wish) {
         const isMatch = products.some((product) => {
           return wish.some((wishedItem) => {
-            // Compare properties (e.g., assuming 'id' is a unique identifier)
             return product.id === wishedItem.id;
           });
         });
 
         if (isMatch) {
-          // console.log('Some products match the wish list.');
           const matchingProductIds = products
             .filter((product) =>
               wish.some((wishedItem) => product.id === wishedItem.id)
@@ -85,9 +70,6 @@ getProducts();
     })();
   }, [data?.data.data, getWishList, products]);
 
-  // console.log('isLoading', isLoading);
-  // console.log('isFetched', isFetched);
-
   async function addToMyCart(id) {
     await addToCart(id);
   }
@@ -96,7 +78,6 @@ getProducts();
     if (!matchingProductIds.includes(id)) {
       e.target.classList.replace("fa-regular", "fa-solid");
       let { data } = await addToWishList(id);
-      // console.log(data.data.length);
       if (data.status === "success") {
         toast.success(data.message);
         setWishListNumber(data.data.length);
@@ -104,7 +85,6 @@ getProducts();
     } else {
       e.target.classList.replace("fa-solid", "fa-regular");
       let data = await deleteWishList(id);
-      // console.log(data.data.data.length);
       if (data.status === 200) {
         setDataWishList(data.data.data);
         setWishListNumber(data.data.data.length);

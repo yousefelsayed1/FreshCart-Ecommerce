@@ -83,12 +83,6 @@ export default function Details() {
   };
 
   async function addToMyCart(id) {
-    /*     let {data} = await addToCart(id);
-    // console.log(data);
-    if(data.status === 'success') {
-      toast.success(data.message);
-      setCartNumber(data.numOfCartItems);
-    } */
     await addToCart(id);
   }
 
