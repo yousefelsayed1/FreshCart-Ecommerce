@@ -51,7 +51,7 @@ export default function Categories() {
       {
         breakpoint: 480, // Mobile
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },

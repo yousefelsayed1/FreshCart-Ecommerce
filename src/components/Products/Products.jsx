@@ -111,7 +111,7 @@ export default function Products() {
           <>
             {data?.data.data.map((product) => {
               return (
-                <div className="col-md-4 col-lg-3" key={product._id}>
+                <div className="col-md-4 col-lg-4" key={product._id}>
                   <div className={`card product ${style.pad} mb-5`}>
                     <div className="card-body">
                       <Link to={`/details/${product._id}`}>
@@ -128,9 +128,6 @@ export default function Products() {
                         </h6>
                         <div className="d-flex justify-content-between">
                           <StarRating rating={product.ratingsAverage} />
-                          <span className={`${style.fs9} text-muted mt-1`}>
-                            ({product.sold})
-                          </span>
                         </div>
                         <span>{product.price}EGP</span>
                       </Link>
