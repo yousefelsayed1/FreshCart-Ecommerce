@@ -14,7 +14,7 @@ export default function InformationHome() {
           <div className="col-md-6 col-lg-3">
             <div className={`${style.mb8} mb-xl-0`}>
               <div className={`${style.mb6}`}>
-                <img src={clock} alt="clock" />
+                <img className="w-40" src={clock} alt="clock" />
               </div>
               <h3 className={`${style.mb3} ${style.h5}`}>
                 10 minute grocery now
@@ -28,7 +28,7 @@ export default function InformationHome() {
           <div className="col-md-6 col-lg-3">
             <div className={`${style.mb8} mb-xl-0`}>
               <div className={`${style.mb6}`}>
-                <img src={gift} alt="gift" />
+                <img className="w-40" src={gift} alt="gift" />
               </div>
               <h3 className={`${style.mb3} ${style.h5}`}>
                 Best Prices &amp; Offers
@@ -42,7 +42,7 @@ export default function InformationHome() {
           <div className="col-md-6 col-lg-3">
             <div className={`${style.mb8} mb-xl-0`}>
               <div className={`${style.mb6}`}>
-                <img src={packagee} alt="package" />
+                <img className="w-40" src={packagee} alt="package" />
               </div>
               <h3 className={`${style.mb3} ${style.h5}`}>Wide Assortment</h3>
               <p>
@@ -54,7 +54,7 @@ export default function InformationHome() {
           <div className="col-md-6 col-lg-3">
             <div className={`${style.mb8} mb-xl-0`}>
               <div className={`${style.mb6}`}>
-                <img src={refresh} alt="refresh" />
+                <img className="w-40" src={refresh} alt="refresh" />
               </div>
               <h3 className={`${style.mb3} ${style.h5}`}>Easy Returns</h3>
               <p>

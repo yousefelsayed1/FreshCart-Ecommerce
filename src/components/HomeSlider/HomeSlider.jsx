@@ -53,7 +53,7 @@ export default function HomeSlider() {
                       </span>
                     </span>
                   </div>
-                  <Link to="/products" className="btn btn-success">
+                  <Link to="/products" className="btn btn-primary">
                     Shop Deals Now
                     <i className="fa-solid fa-arrow-right ms-2"></i>
                   </Link>
@@ -89,7 +89,7 @@ export default function HomeSlider() {
                       </span>
                     </span>
                   </div>
-                  <Link to="/products" className="btn btn-success">
+                  <Link to="/products" className="btn btn-primary">
                     Shop Deals Now
                     <i className="fa-solid fa-arrow-right ms-2"></i>
                   </Link>
@@ -126,7 +126,7 @@ export default function HomeSlider() {
                       </span>
                     </span>
                   </div>
-                  <Link to="/products" className="btn btn-success">
+                  <Link to="/products" className="btn btn-primary">
                     Shop Deals Now
                     <i className="fa-solid fa-arrow-right ms-2"></i>
                   </Link>

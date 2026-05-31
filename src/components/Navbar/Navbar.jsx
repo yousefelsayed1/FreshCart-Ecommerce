@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { userContext } from "../../context/TokenContext";
 import { cartContext } from "../../context/CartContext";
 import style from "../../styles/Navbar.module.scss";
-import freshcartLogo from "../../assets/img/freshcart-logo.svg";
+import freshcartLogo from "../../assets/img/freshcart-logo.png";
 
 export default function Navbar() {
   let { cartNumber, getCart, wishListNumber, getWishList } =
@@ -46,7 +46,7 @@ export default function Navbar() {
         <div className="container">
           <Link className="navbar-brand" to="/">
             {/* <i className="fa-solid text-main fa-cart-shopping"></i><span className='fw-bold ms-2'>FreshCart</span> */}
-            <img src={freshcartLogo} alt="logo" />
+            <img style={{ width: "180px" }} src={freshcartLogo} alt="logo" />
           </Link>
           <button
             className="navbar-toggler d-lg-none"

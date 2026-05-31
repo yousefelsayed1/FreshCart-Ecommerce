@@ -9,7 +9,7 @@ export default function Categories() {
 
   async function getCategory() {
     let { data } = await axios.get(
-      `https://ecommerce.routemisr.com/api/v1/categories`
+      `https://ecommerce.routemisr.com/api/v1/categories`,
     );
     setCategory(data.data);
   }
@@ -18,41 +18,55 @@ export default function Categories() {
     getCategory();
   }, []);
 
-  var settings = {
+  const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 6,
+    speed: 600,
+    slidesToShow: 5,
     slidesToScroll: 1,
+
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
+    pauseOnFocus: true,
+
+    swipeToSlide: true,
+    draggable: true,
+
+    arrows: true,
+
     responsive: [
       {
-        breakpoint: 1200, // Desktop
+        breakpoint: 1400,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 1,
+          arrows: true,
         },
       },
+
       {
-        breakpoint: 992, // Desktop
+        breakpoint: 992,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
+          arrows: false,
         },
       },
+
       {
-        breakpoint: 768, // Tablet
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
         },
       },
+
       {
-        breakpoint: 480, // Mobile
+        breakpoint: 576,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
+          arrows: false,
+          dots: false,
         },
       },
     ],
@@ -69,8 +83,12 @@ export default function Categories() {
                     <div className={`card-body text-center ${style.py8}`}>
                       <img
                         src={category.image}
-                        className={`w-100 mb-3 rounded-4`}
-                        height={240}
+                        className="w-100 mb-3 rounded-4 d-block mx-auto"
+                        style={{
+                          maxWidth: "260px",
+                          height: "240px",
+                          objectFit: "cover",
+                        }}
                         alt={category.name}
                       />
                       <p className={` ${style.fs6} ${style.textTruncate}`}>

@@ -28,7 +28,7 @@ export default function Products() {
   async function getProducts(page = currentPage) {
     const productsPerPage = 12;
     return await axios.get(
-      `https://ecommerce.routemisr.com/api/v1/products?page=${page}&limit=${productsPerPage}`
+      `https://ecommerce.routemisr.com/api/v1/products?page=${page}&limit=${productsPerPage}`,
     );
   }
 
@@ -38,7 +38,7 @@ export default function Products() {
     {
       cacheTime: 3000,
       refetchInterval: 3000,
-    }
+    },
   );
   let products = data?.data.data;
 
@@ -57,7 +57,7 @@ export default function Products() {
         if (isMatch) {
           const matchingProductIds = products
             .filter((product) =>
-              wish.some((wishedItem) => product.id === wishedItem.id)
+              wish.some((wishedItem) => product.id === wishedItem.id),
             )
             .map((matchingProduct) => matchingProduct.id);
           setMatchingProductIds(matchingProductIds);
@@ -120,18 +120,24 @@ export default function Products() {
                           className="w-100 mb-2"
                           alt={product.title}
                         />
-                        <p className="text-main text-nowrap">
-                          {product.category.name}
-                        </p>
-                        <h6 className={` fw-bold mb-4 ${style.spac}`}>
-                          {product.title.split(" ").slice(0, 3).join(" ")}
-                        </h6>
-                        <div className="d-flex justify-content-between">
-                          <StarRating rating={product.ratingsAverage} />
+                        <div className="mt-2 d-flex justify-content-between">
+                          <div className="name-type">
+                            <p className="text-main text-nowrap">
+                              {product.category.name}
+                            </p>
+                            <h6 className={` fw-bold mb-2 ${style.spac}`}>
+                              {product.title.split(" ").slice(0, 3).join(" ")}
+                            </h6>
+                          </div>
+                          <div className="rate-price">
+                            <div className="d-flex justify-content-between">
+                              <StarRating rating={product.ratingsAverage} />
+                            </div>
+                            <span>{product.price}EGP</span>
+                          </div>
                         </div>
-                        <span>{product.price}EGP</span>
                       </Link>
-                      <div className="d-inline float-end ">
+                      <div className="mt-2 d-flex flex-row-reverse justify-content-between align-items-center">
                         <button
                           onClick={(e) => {
                             addToMyWishList(e, product._id);
@@ -146,15 +152,15 @@ export default function Products() {
                             } fa-heart fs-5`}
                           ></i>
                         </button>
+                        <button
+                          onClick={() => {
+                            addToMyCart(product._id);
+                          }}
+                          className="btn bg-main text-light rounded-5"
+                        >
+                          Add To Cart
+                        </button>
                       </div>
-                      <button
-                        onClick={() => {
-                          addToMyCart(product._id);
-                        }}
-                        className="btn bg-main text-light w-100 mt-3 rounded-5"
-                      >
-                        Add To Cart
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -194,7 +200,7 @@ export default function Products() {
                     className="page-link rounded-2"
                     onClick={() =>
                       setCurrentPage((prevPage) =>
-                        Math.min(prevPage + 1, totalPages)
+                        Math.min(prevPage + 1, totalPages),
                       )
                     }
                     disabled={currentPage === totalPages}
