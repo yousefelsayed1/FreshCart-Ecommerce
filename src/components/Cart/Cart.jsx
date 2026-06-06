@@ -33,7 +33,7 @@ export default function Cart() {
 
       setLoading(false);
     })();
-  }, []);
+  }, [getCart]);
 
   async function removeProduct(id) {
     let data = await deleteCart(id);
@@ -154,7 +154,7 @@ export default function Cart() {
                             onClick={() => {
                               updateProduct(
                                 product.product._id,
-                                product.count + 1
+                                product.count + 1,
                               );
                             }}
                             className={`btn btn-outline-success ${style.fs9} ${style.pad}`}
@@ -166,7 +166,7 @@ export default function Cart() {
                             onClick={() => {
                               updateProduct(
                                 product.product._id,
-                                product.count - 1
+                                product.count - 1,
                               );
                             }}
                             className={`btn btn-outline-success ${style.fs9} ${style.pad}`}

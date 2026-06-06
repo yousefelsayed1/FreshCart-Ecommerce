@@ -31,7 +31,7 @@ export default function Details() {
 
   async function getProductDetails() {
     let { data } = await axios.get(
-      `https://ecommerce.routemisr.com/api/v1/products/${productId}`
+      `https://ecommerce.routemisr.com/api/v1/products/${productId}`,
     );
     // console.log(data.data);
     setDetails(data.data);
@@ -43,7 +43,7 @@ export default function Details() {
     (async () => {
       try {
         let { data } = await axios.get(
-          `https://ecommerce.routemisr.com/api/v1/products/${productId}`
+          `https://ecommerce.routemisr.com/api/v1/products/${productId}`,
         );
         let detail = data.data; // This is the detail object
         // console.log(detail);
@@ -69,7 +69,7 @@ export default function Details() {
         return error;
       }
     })();
-  }, []);
+  }, [getProductDetails]);
 
   var settings = {
     dots: true,
@@ -88,7 +88,7 @@ export default function Details() {
 
   async function addToMyWishList(e, id) {
     let { data } = await axios.get(
-      `https://ecommerce.routemisr.com/api/v1/products/${productId}`
+      `https://ecommerce.routemisr.com/api/v1/products/${productId}`,
     );
     let detail = data.data; // This is the detail object
     // console.log(detail);
