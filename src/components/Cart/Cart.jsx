@@ -33,7 +33,8 @@ export default function Cart() {
 
       setLoading(false);
     })();
-  }, [getCart, setCartNumber]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function removeProduct(id) {
     let data = await deleteCart(id);
