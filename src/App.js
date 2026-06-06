@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MasterLayout from "./components/MasterLayout/MasterLayout";
@@ -24,7 +23,6 @@ import Profile from "./components/Profile/Profile";
 import CategoriesBody from "./components/CategoriesBody/CategoriesBody";
 import SpecifCategory from "./components/SpecifCategory/SpecifCategory";
 import SpecifBrand from "./components/SpecifBrand/SpecifBrand";
-import Footer from "./components/Footer/Footer";
 
 const router = createBrowserRouter([
   {

@@ -14,7 +14,7 @@ export default function Brands() {
     return await axios.get(`https://ecommerce.routemisr.com/api/v1/brands`);
   }
 
-  let { data, isLoading, isFetched } = useQuery("brands", getBrands);
+  let { data, isLoading } = useQuery("brands", getBrands);
   // console.log(data?.data.data);
   // console.log('isLoading', isLoading);
   // console.log('isFetched', isFetched);

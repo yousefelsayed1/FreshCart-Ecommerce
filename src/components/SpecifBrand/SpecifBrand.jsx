@@ -17,7 +17,7 @@ export default function SpecifBrand() {
 
   async function getSpecificBrands(id) {
     let { data } = await axios.get(
-      `https://ecommerce.routemisr.com/api/v1/brands/${id}`
+      `https://ecommerce.routemisr.com/api/v1/brands/${id}`,
     );
     // console.log(data.data)
     setSpecificBrand(data.data);
@@ -25,7 +25,7 @@ export default function SpecifBrand() {
   }
   useEffect(() => {
     getSpecificBrands(id);
-  }, []);
+  });
 
   return (
     <>

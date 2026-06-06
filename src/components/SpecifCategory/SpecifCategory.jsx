@@ -18,7 +18,7 @@ export default function SpecifCategory() {
 
   async function getSpecificCategories(id) {
     let { data } = await axios.get(
-      `https://ecommerce.routemisr.com/api/v1/categories/${id}`
+      `https://ecommerce.routemisr.com/api/v1/categories/${id}`,
     );
     setSpecificCategory(data.data);
     // console.log(data.data)
@@ -27,7 +27,7 @@ export default function SpecifCategory() {
 
   async function getSubAllSpecificCategories(id) {
     let { data } = await axios.get(
-      `https://ecommerce.routemisr.com/api/v1/categories/${id}/subcategories`
+      `https://ecommerce.routemisr.com/api/v1/categories/${id}/subcategories`,
     );
     // console.log(data.data)
     setSubSpecificCategory(data.data);
@@ -36,7 +36,7 @@ export default function SpecifCategory() {
   useEffect(() => {
     getSpecificCategories(id);
     getSubAllSpecificCategories(id);
-  }, []);
+  });
 
   return (
     <>

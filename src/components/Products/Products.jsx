@@ -68,7 +68,7 @@ export default function Products() {
         // console.log('Products or wish data is not available yet.');
       }
     })();
-  }, [data?.data.data, getWishList, products]);
+  }, [data?.data.data, getWishList, products, getCart]);
 
   async function addToMyCart(id) {
     await addToCart(id);
