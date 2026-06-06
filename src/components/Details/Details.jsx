@@ -69,7 +69,7 @@ export default function Details() {
         return error;
       }
     })();
-  }, [getProductDetails]);
+  }, [getProductDetails, getWishList]);
 
   var settings = {
     dots: true,

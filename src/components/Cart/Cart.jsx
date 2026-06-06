@@ -33,7 +33,7 @@ export default function Cart() {
 
       setLoading(false);
     })();
-  }, [getCart]);
+  }, [getCart, setCartNumber]);
 
   async function removeProduct(id) {
     let data = await deleteCart(id);
