@@ -69,7 +69,8 @@ export default function Details() {
         return error;
       }
     })();
-  }, [getProductDetails, getWishList, productId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   var settings = {
     dots: true,
